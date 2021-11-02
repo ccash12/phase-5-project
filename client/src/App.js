@@ -22,7 +22,10 @@ function App() {
 
   return (
     <div className="App">
-      <NavBar />
+      <NavBar
+        user={user}
+        setUser={setUser}
+      />
       <main>
           <Switch>
             <Route exact path='/'>
