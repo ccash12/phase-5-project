@@ -19,7 +19,7 @@ function Login( {errors, setErrors, setUser, setIsLoading} ) {
                 setIsLoading(false)
                 r.json().then((user) => setUser(user))
             } else {
-                r.json().then((err) => setErrors.(err.errors))
+                r.json().then((err) => setErrors(err.errors))
             }
         })
     }

@@ -1,4 +1,5 @@
 import React from 'react'
+import { useState } from "react";
 
 function Signup( {setUser,setErrors,isLoading,setIsLoading,errors} ){
     const [email, setEmail] = useState('')
@@ -20,7 +21,6 @@ function Signup( {setUser,setErrors,isLoading,setIsLoading,errors} ){
                 email, 
                 first_name,
                 last_name,
-                address,
                 password,
                 password_confirmation
             })
