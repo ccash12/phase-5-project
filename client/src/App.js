@@ -13,6 +13,7 @@ function App() {
   const [user,setUser] = useState(null)
   const [isLoading, setIsLoading] = useState(false)
   const [errors, setErrors] = useState([])
+  const [getRecipes,setGetRecipes] = useState([])
 
   useEffect(() => {
     fetch("/me")
@@ -31,6 +32,8 @@ function App() {
             <Route exact path='/'>
               <Home 
                 user = {user}
+                getRecipes = {getRecipes}
+                setGetRecipes={setGetRecipes}
                 />
             </Route>
             <Route exact path = '/signup'>
