@@ -47,7 +47,11 @@ function App() {
         user={user}
         setUser={setUser}
       />
-      <NewRecipeForm />
+      <NewRecipeForm
+        newRecipeInput={newRecipeInput}
+        setNewRecipeInput={setNewRecipeInput}
+        handleSubmit={handleSubmit}
+        />
       <main>
           <Switch>
             <Route exact path='/'>
