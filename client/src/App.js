@@ -8,13 +8,14 @@ import NavBar from './components/NavBar'
 import Login from './components/Login'
 import Home from './components/Home'
 import Signup from './components/Signup'
+import NewRecipeForm from "./components/NewRecipeForm";
 
 function App() {
   const [user,setUser] = useState(null)
   const [isLoading, setIsLoading] = useState(false)
   const [errors, setErrors] = useState([])
   const [getRecipes,setGetRecipes] = useState([])
-
+  const [newRecipeInput, setNewRecipeInput] = useState({ name:'', cuisine: '', meal:'', description:'', rating: '',image:'' })
 
 
 
@@ -24,7 +25,21 @@ function App() {
         r.json().then((user) => setUser(user))
       }
     })
-  }, [])
+  }, []);
+
+  function handleSubmit(e) {
+    e.preventDefault()
+    setNewRecipeInput(newRecipeInput)
+    fetch(`http://localhost:3000/recipes`, {
+      method: 'POST',
+      headers: {'Content-Type': 'application/json'},
+      body: JSON.stringify(newRecipeInput)})
+    .then(resp => resp.json())
+    .then(newRecipe => setGetRecipes([...getRecipes, newRecipe]))
+    console.log(newRecipeInput)
+    setNewRecipeInput({name:'', cuisine: '', meal:'', description:'', rating: '',image:''  });
+  };
+  
 
   return (
     <div className="App">
@@ -32,6 +47,7 @@ function App() {
         user={user}
         setUser={setUser}
       />
+      <NewRecipeForm />
       <main>
           <Switch>
             <Route exact path='/'>

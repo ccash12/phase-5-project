@@ -5,12 +5,12 @@ function RecipeCard({recipe}) {
 
     return(
         <div className="recipe-card"> 
-            <img  src={image} alt="image"/>
+            <img className="cardImg" src={image} alt="image"/>
             <h3>{name}</h3>
-            <h3>{cuisine}</h3>
-            <h3>{meal}</h3>
-            <h3>{rating}</h3>
-            <h3>{description}</h3>
+            <h2>{cuisine}</h2>
+            <h2>{meal}</h2>
+            <h2>{rating}</h2>
+            <h2>{description}</h2>
             <button>Add to My Recipes</button>
         </div>
     )
