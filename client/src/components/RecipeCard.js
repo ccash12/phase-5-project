@@ -3,6 +3,8 @@ import React from 'react'
 function RecipeCard({recipe}) {
     const { name, cuisine, meal, rating, description, image} = recipe
 
+    console.log(image)
+
     return(
         <div className="recipe-card"> 
             <img className="cardImg" src={image} alt="image"/>

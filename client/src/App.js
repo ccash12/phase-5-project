@@ -9,6 +9,7 @@ import Login from './components/Login'
 import Home from './components/Home'
 import Signup from './components/Signup'
 import NewRecipeForm from "./components/NewRecipeForm";
+import MyRecipes from "./components/MyRecipes"
 
 function App() {
   const [user,setUser] = useState(null)
@@ -60,6 +61,9 @@ function App() {
                 getRecipes = {getRecipes}
                 setGetRecipes={setGetRecipes}
                 />
+            </Route>
+            <Route path='/recipes/mine'> 
+              component={MyRecipes}
             </Route>
             <Route exact path = '/signup'>
               <Signup 
