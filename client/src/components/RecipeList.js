@@ -1,10 +1,17 @@
 import React from 'react'
 import RecipeCard from './RecipeCard'
 
-function RecipeList() {
+function RecipeList({displayRecipes}) {
+    const displayRecipeArray = displayRecipes.map(recipe =>
+        <RecipeCard    
+            key={recipe.id}
+            recipe={recipe} 
+        />
+        )
+
     return(
         <div> 
-            <RecipeCard /> 
+            {displayRecipeArray}
         </div>
     )
 }
