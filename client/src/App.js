@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import { Switch, Route} from "react-router-dom"
 
+
 import './App.css';
 
 import NavBar from './components/NavBar'
@@ -8,18 +9,22 @@ import Login from './components/Login'
 import Home from './components/Home'
 import Signup from './components/Signup'
 
-
 function App() {
   const [user,setUser] = useState(null)
   const [isLoading, setIsLoading] = useState(false)
   const [errors, setErrors] = useState([])
   const [getRecipes,setGetRecipes] = useState([])
 
+
+
+
   useEffect(() => {
-    fetch("/me")
-      .then((r) => r.json())
-      .then((user) => setUser(user));
-  }, []);
+    fetch("http://localhost:3000/me").then((r) => {
+      if (r.ok) {
+        r.json().then((user) => setUser(user))
+      }
+    })
+  }, [])
 
   return (
     <div className="App">

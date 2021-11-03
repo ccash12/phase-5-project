@@ -18,7 +18,7 @@ class ApplicationController < ActionController::API
     end
 
     def render_record_not_found
-        render json: { error: "Product not found" }, status: :not_found
+        render json: { error: "Recipe not found" }, status: :not_found
     end
 
 end

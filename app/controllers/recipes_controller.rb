@@ -1,14 +1,14 @@
-class ProductsController < ApplicationController
+class RecipesController < ApplicationController
     skip_before_action :authorize
 
     def index
         recipes = Recipe.all
-        render json: products
+        render json: recipes
     end
 
     def show
         recipe = Recipe.find_by(id: params[:id])
-        render json: product
+        render json: recipe
     end
 
 end

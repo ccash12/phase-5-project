@@ -1,5 +1,6 @@
 import React from 'react'
 import { useState } from "react";
+import { useHistory } from 'react-router'
 
 function Signup( {setUser,setErrors,isLoading,setIsLoading,errors} ){
     const [email, setEmail] = useState('')
@@ -8,11 +9,13 @@ function Signup( {setUser,setErrors,isLoading,setIsLoading,errors} ){
     const [password, setPassword] = useState('')
     const [password_confirmation, setPasswordConfirmation] = useState('')
 
+    const history = useHistory()
+
     function handleSubmit(e) {
         e.preventDefault()
         setErrors([])
         setIsLoading(true)
-        fetch('/signup',{ 
+        fetch('http://localhost:3000/signup',{ 
             method: "POST",
             headers: { 
                 "Content-Type":"application/json",
@@ -28,6 +31,7 @@ function Signup( {setUser,setErrors,isLoading,setIsLoading,errors} ){
             setIsLoading(false)
             if (r.ok) {
                 r.json().then((user) => setUser(user))
+                history.push('/')
             } else {
                 r.json().then((err) => setErrors(err.errors))
             }
@@ -52,8 +56,8 @@ function Signup( {setUser,setErrors,isLoading,setIsLoading,errors} ){
                     id="last_name" 
                     autoComplete="off"
                     value={last_name} 
-                    onChange={(e) => setLastName(e.target.value)}/
-                >
+                    onChange={(e) => setLastName(e.target.value)}
+                />
                 <label htmlFor="email">Email:</label>
                     <input 
                         type="text" 

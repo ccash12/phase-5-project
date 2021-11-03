@@ -1,8 +1,3 @@
-# Ingredient.destroy_all 
-# Recipe.destroy_all 
-# User.destroy_all 
-
-
 puts "🌱 Seeding recipes ..."
 
 i1 = Ingredient.create(name: "Garlic")
@@ -13,8 +8,7 @@ i5 = Ingredient.create(name: "Tomato")
 i6 = Ingredient.create(name: "White Onion")
 
 
-
-u1 = User.create(first_name: "Courtney", last_name: "Cash", email: "courtney@gmail.com")
+u1 = User.create(first_name: "Courtney", last_name: "Cash", email: "courtney@gmail.com", password:"password")
 
 r1 = Recipe.create(name:"Spaghetti and Meatballs", cuisine: "Italian", meal: "Dinner", rating:"4/5", description:"long pasta with red sauce and meatballs", image: "https://hips.hearstapps.com/delish/assets/17/39/1506456062-delish-spaghetti-meatballs.jpg")
 r2 = Recipe.create(name:"Pancakes", cuisine:"American", meal: "Breakfast", rating:"3/5", description:"Fluffy", image:"https://media.eggs.ca/assets/RecipePhotos/_resampled/FillWyIxMjgwIiwiNzIwIl0/Fluffy-Pancakes-New-CMS.jpg")

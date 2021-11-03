@@ -1,5 +1,6 @@
 import React from 'react'
 import Search from './Search'
+import RecipeList from './RecipeList'
 import {useState,useEffect} from "react";
 
 function RecipeContainer({getRecipes,setGetRecipes}) {
@@ -22,7 +23,9 @@ function RecipeContainer({getRecipes,setGetRecipes}) {
                 setSearchRecipes={setSearchRecipes}
             /> 
 
-            {/* <RecipeList />  */}
+            <RecipeList 
+                displayRecipes={displayRecipes}
+            /> 
         </div>
     )
 }
