@@ -10,7 +10,7 @@ function RecipeList({displayRecipes}) {
         )
 
     return(
-        <div> 
+        <div clasName="recipe-list"> 
             {displayRecipeArray}
         </div>
     )

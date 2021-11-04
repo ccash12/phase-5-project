@@ -10,6 +10,7 @@ import Home from './components/Home'
 import Signup from './components/Signup'
 import NewRecipeForm from "./components/NewRecipeForm";
 import MyRecipes from "./components/MyRecipes"
+import RecipeDetails from "./components/RecipeDetails"
 
 function App() {
   const [user,setUser] = useState(null)

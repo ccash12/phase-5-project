@@ -18,7 +18,7 @@ function NavBar( {user, setUser} ) {
         <header>
             <div className="NavBarContainer"> 
                 <Link to="/">
-                    <h2 className="Title">Recipe Website</h2>
+                    <h1 className="Title">Recipe Website</h1>
                 </Link>
             </div>
             <div> 
