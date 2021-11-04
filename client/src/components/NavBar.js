@@ -16,9 +16,9 @@ function NavBar( {user, setUser} ) {
     
     return(
         <header>
-            <div> 
+            <div className="NavBarContainer"> 
                 <Link to="/">
-                    <h2>Recipe Website</h2>
+                    <h2 className="Title">Recipe Website</h2>
                 </Link>
             </div>
             <div> 

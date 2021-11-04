@@ -2,7 +2,7 @@ function NewRecipeForm({newRecipeInput,setNewRecipeInput,handleSubmit}) {
     const {name,cuisine,meal,rating,description,image} = newRecipeInput
 
     return(
-        <div>
+        <div className="NewRecipeForm">
                 <h3>Add New Recipe:</h3>
             <form onsubmit={handleSubmit}> 
                 <input 
