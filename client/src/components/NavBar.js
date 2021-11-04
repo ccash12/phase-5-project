@@ -1,5 +1,6 @@
 import React from 'react'
 import { Link } from "react-router-dom"
+import MyRecipes from "./MyRecipes"
 
 
 function NavBar( {user, setUser} ) {
@@ -26,6 +27,9 @@ function NavBar( {user, setUser} ) {
             {user ? (
                     <>
                         <button className="LogOutButton" onClick={handleLogout}>Log Out</button> 
+                        <Link to="/myrecipes" className="MyRecipesLink">
+                            My Recipes
+                        </Link>
                     </>
                 ) : (
                 <>

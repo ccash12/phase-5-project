@@ -63,8 +63,8 @@ function App() {
                 setGetRecipes={setGetRecipes}
                 />
             </Route>
-            <Route path='/recipes/mine'> 
-              component={MyRecipes}
+            <Route path='/myrecipes'> 
+              <MyRecipes />
             </Route>
             <Route exact path = '/signup'>
               <Signup 
