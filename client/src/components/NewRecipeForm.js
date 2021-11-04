@@ -1,5 +1,3 @@
-import React, {useState} from 'react'
-
 function NewRecipeForm({newRecipeInput,setNewRecipeInput,handleSubmit}) {
     const {name,cuisine,meal,rating,description,image} = newRecipeInput
 

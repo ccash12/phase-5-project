@@ -9,10 +9,10 @@ function RecipeCard({recipe}) {
         <div className="recipe-card"> 
             <img className="cardImg" src={image} alt="image"/>
             <h3>{name}</h3>
-            <h2>{cuisine}</h2>
-            <h2>{meal}</h2>
-            <h2>{rating}</h2>
-            <h2>{description}</h2>
+            <h4>{cuisine}</h4>
+            <h4>{meal}</h4>
+            <h4>{rating}</h4>
+            <h4>{description}</h4>
             <button>Add to My Recipes</button>
         </div>
     )
