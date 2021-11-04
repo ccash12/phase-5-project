@@ -97,3 +97,8 @@ input[type=text], select {
   border-radius: 1px;
   box-sizing: border-box;
 }
+
+.cardImg {
+  width: 200px;
+  height: auto;
+}
