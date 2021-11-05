@@ -11,4 +11,19 @@ class RecipesController < ApplicationController
         render json: recipe
     end
 
+    def create 
+        recipe = Recipe.new(recipe_params)
+        if recipe.save 
+            render json: recipe, status: :created
+        else
+            render json: {error: "validation errors"}, status: :unprocessable_entity
+        end
+    end
+
+    private
+
+    def recipe_params
+        params.permit(:name, :cuisine, :meal, :rating, :description, :image)
+    end
+
 end

@@ -12,6 +12,7 @@ import NewRecipeForm from "./components/NewRecipeForm";
 import MyRecipes from "./components/MyRecipes"
 import RecipeDetails from "./components/RecipeDetails"
 
+
 function App() {
   const [user,setUser] = useState(null)
   const [isLoading, setIsLoading] = useState(false)
@@ -19,6 +20,11 @@ function App() {
   const [getRecipes,setGetRecipes] = useState([])
   const [newRecipeInput, setNewRecipeInput] = useState({ name:'', cuisine: '', meal:'', description:'', rating: '',image:'' })
 
+//   useEffect(() => {
+//     fetch("/recipes")
+//     .then(r => r.json())
+//     .then(recipes => setGetRecipes(recipes))
+// }, [setGetRecipes]);
 
 
   useEffect(() => {
@@ -28,19 +34,9 @@ function App() {
       }
     })
   }, []);
+  
 
-  function handleSubmit(e) {
-    e.preventDefault()
-    setNewRecipeInput(newRecipeInput)
-    fetch(`http://localhost:3000/recipes`, {
-      method: 'POST',
-      headers: {'Content-Type': 'application/json'},
-      body: JSON.stringify(newRecipeInput)})
-    .then(resp => resp.json())
-    .then(newRecipe => setGetRecipes([...getRecipes, newRecipe]))
-    console.log(newRecipeInput)
-    setNewRecipeInput({name:'', cuisine: '', meal:'', description:'', rating: '',image:''  });
-  };
+
   
 
   return (
@@ -49,12 +45,8 @@ function App() {
         user={user}
         setUser={setUser}
       />
-      <NewRecipeForm
-        newRecipeInput={newRecipeInput}
-        setNewRecipeInput={setNewRecipeInput}
-        handleSubmit={handleSubmit}
-        />
       <main>
+        {user ? (
           <Switch>
             <Route exact path='/'>
               <Home 
@@ -63,10 +55,11 @@ function App() {
                 setGetRecipes={setGetRecipes}
                 />
             </Route>
-            <Route path='/myrecipes'> 
-              <MyRecipes />
-            </Route>
-            <Route exact path = '/signup'>
+            <Route path='/myrecipes' component={MyRecipes}/> 
+            </Switch>
+            ) : (
+            <Switch>
+            <Route path='/signup'>
               <Signup 
                 setUser={setUser}
                 errors={errors}
@@ -84,7 +77,15 @@ function App() {
                 setIsLoading={setIsLoading}
               /> 
             </Route>
+            <Route>
+              <Home exact path='/'
+                user = {user}
+                getRecipes = {getRecipes}
+                setGetRecipes={setGetRecipes}
+              />
+            </Route>
             </Switch>
+            )}
       </main>
     </div>
   );

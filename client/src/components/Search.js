@@ -6,7 +6,7 @@ function Search({searchRecipes,setSearchRecipes}) {
             <input
                 type="text"
                 id="search"
-                placeholder="Search by Ingredient"
+                placeholder="Search by Recipe"
                 vaule={searchRecipes}
                 onChange={(e) => setSearchRecipes(e.target.value)}
             />

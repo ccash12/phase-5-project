@@ -13,7 +13,6 @@ function RecipeCard({recipe}) {
             <h4>Meal:{meal}</h4>
             <h4>Rating:{rating}</h4>
             <h4>Description:{description}</h4>
-            <button>Add to My Recipes</button>
         </div>
     )
 }

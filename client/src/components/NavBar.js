@@ -1,6 +1,6 @@
 import React from 'react'
 import { Link } from "react-router-dom"
-import MyRecipes from "./MyRecipes"
+
 
 
 function NavBar( {user, setUser} ) {

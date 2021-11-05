@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
   # resources :recipe_ingredients
   # resources :ingredients
-  resources :recipes, only: [:index, :show]
+  resources :recipes, only: [:index, :show, :create]
   # resources :users
 
   get "/me", to: "users#show"

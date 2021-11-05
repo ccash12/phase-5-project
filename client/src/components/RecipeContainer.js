@@ -2,9 +2,10 @@ import React from 'react'
 import Search from './Search'
 import RecipeList from './RecipeList'
 import ImageSlider from './ImageSlider'
+import NewRecipeForm from './NewRecipeForm'
 import {useState,useEffect} from "react";
 
-function RecipeContainer({getRecipes,setGetRecipes}) {
+function RecipeContainer({getRecipes,setGetRecipes,newRecipeInput,setNewRecipeInput}) {
     const [searchRecipes,setSearchRecipes] = useState('')
     
     
@@ -24,6 +25,11 @@ function RecipeContainer({getRecipes,setGetRecipes}) {
     return(
         <div> 
             <ImageSlider />
+            {/* <NewRecipeForm
+                getRecipes={getRecipes}
+                setSearchRecipes={setSearchRecipes}
+                newRecipeInput={newRecipeInput}
+            /> */}
             <Search 
                 searchRecipes={searchRecipes}
                 setSearchRecipes={setSearchRecipes}
@@ -32,7 +38,9 @@ function RecipeContainer({getRecipes,setGetRecipes}) {
             <RecipeList 
                 displayRecipes={displayRecipes}
                 getRecipes={getRecipes}
+                newRecipeInput={newRecipeInput}
             /> 
+
         </div>
     )
 }

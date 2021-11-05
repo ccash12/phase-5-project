@@ -1,5 +1,40 @@
-function NewRecipeForm({newRecipeInput,setNewRecipeInput,handleSubmit}) {
-    const {name,cuisine,meal,rating,description,image} = newRecipeInput
+import {useState} from 'react'
+
+function NewRecipeForm({newRecipeInput, getRecipes, setGetRecipes}) {
+    const [name,setName] = useState("")
+    const [cuisine,setCuisine] = useState("")
+    const [meal,setMeal] = useState("")
+    const [rating,setRating] = useState("")
+    const [description,setDescription] = useState("")
+    const [image, setImage] = useState("")
+
+    
+
+    function handleSubmit(e) {
+        e.preventDefault();
+        fetch('http://localhost:3000/recipes', {
+            method: 'POST',
+            headers: {'Content-Type': 'application/json'},
+            body: JSON.stringify({
+            name:name,
+            cuisine:cuisine,
+            meal:meal,
+            rating:rating,
+            description:description,
+            image:image
+            }), 
+        })
+        .then(resp => resp.json())
+        .then((newRecipe) => handleAddRecipe(newRecipe))
+    };
+    
+
+        function handleAddRecipe(newRecipe) {
+        const updatedRecipeArray = [...getRecipes, newRecipeInput]
+        setGetRecipes(updatedRecipeArray)
+    }
+    
+
 
     return(
         <div className="NewRecipeForm">
@@ -10,44 +45,44 @@ function NewRecipeForm({newRecipeInput,setNewRecipeInput,handleSubmit}) {
                     name='name'
                     placeholder="name"
                     value={name}
-                    onChange={e => setNewRecipeInput({...newRecipeInput, [e.target.name]: e.target.value})}
+                    onChange={(e) => setName(e.target.value)}
                 />
                 <input 
                     type="text" 
                     name='cuisine'
                     placeholder="cuisine"
                     value={cuisine}
-                    onChange={e => setNewRecipeInput({...newRecipeInput, [e.target.name]: e.target.value})}
+                    onChange={(e) => setCuisine(e.target.value)}
                 />
                 <input 
                     type="text" 
                     name='meal'
                     placeholder="meal"
                     value={meal}
-                    onChange={e => setNewRecipeInput({...newRecipeInput, [e.target.name]: e.target.value})}
+                    onChange={(e) => setMeal(e.target.value)}
                 />
                 <input 
                     type="text" 
                     name='rating'
                     placeholder="rating"
                     value={rating}
-                    onChange={e => setNewRecipeInput({...newRecipeInput, [e.target.name]: e.target.value})}
+                    onChange={(e) => setRating(e.target.value)}
                 />
                 <input 
                     type="text" 
                     name='description'
                     placeholder="description"
                     value={description}
-                    onChange={e => setNewRecipeInput({...newRecipeInput, [e.target.name]: e.target.value})}
+                    onChange={(e) => setDescription(e.target.value)}
                 />
                 <input 
                     type="text" 
                     name='image'
                     placeholder="image"
                     value={image}
-                    onChange={e => setNewRecipeInput({...newRecipeInput, [e.target.name]: e.target.value})}
+                    onChange={(e) => setImage(e.target.value)}
                 />
-                <button>Submit New Recipe!</button>
+                <button type="submit">Submit New Recipe!</button>
             </form>
         </div>
     )

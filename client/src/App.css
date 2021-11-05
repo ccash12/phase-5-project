@@ -85,7 +85,7 @@ a:hover{
   padding: 5px;
   margin: 10px;
   border-width: .5em;
-  text-align: center;
+  text-align: center;;
 }
 
 input[type=text], select {
