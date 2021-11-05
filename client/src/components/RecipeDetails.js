@@ -9,7 +9,7 @@ function RecipeDetails(){
     let history = useHistory();
     
     useEffect(() => {
-        fetch(`http://localhost:3000/recipes/${id}`)
+        fetch(`/recipes/${id}`)
         .then(resp => resp.json())
         .then((recipe) => {
             setRecipe(recipe);

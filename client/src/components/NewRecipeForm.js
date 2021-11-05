@@ -13,7 +13,7 @@ function NewRecipeForm({newRecipeInput, getRecipes, setGetRecipes}) {
     function handleSubmit(e) {
         console.log("submitting")
         e.preventDefault();
-        fetch('http://localhost:3000/recipes', {
+        fetch('/recipes', {
             method: 'POST',
             headers: {'Content-Type': 'application/json'},
             body: JSON.stringify({
