@@ -30,7 +30,7 @@ function Login( {errors, setErrors, setUser, setIsLoading} ) {
     
     
     return(
-        <div className="Login"> 
+        <div className="LogInContainer"> 
             <form onSubmit={handleSubmit}> 
                 <label>Email:</label>
                 <input 

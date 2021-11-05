@@ -88,17 +88,30 @@ a:hover{
   text-align: center;;
 }
 
-input[type=text], select {
-  width: 75%;
-  padding: 12px 20px;
-  margin: 8px 0;
-  display: inline-block;
-  border: 1px solid #ccc;
-  border-radius: 1px;
-  box-sizing: border-box;
-}
 
 .cardImg {
   width: 200px;
   height: auto;
+}
+
+.slider {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.SignUpContainer form,
+.LogInContainer form {
+  margin-top: 50px;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  align-items: center;
+}
+
+.SignUpContainer input,
+.LogInContainer input {
+  height: 30px;
+  width: 200px;
 }
