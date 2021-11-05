@@ -1,6 +1,6 @@
 import React from 'react'
 
-function RecipeCard({recipe}) {
+function RecipeCard({recipe, handleRecipeData}) {
     const { name, cuisine, meal, rating, description, image} = recipe
 
     console.log(image)
@@ -13,6 +13,7 @@ function RecipeCard({recipe}) {
             <h4>Meal:{meal}</h4>
             <h4>Rating:{rating}</h4>
             <h4>Description:{description}</h4>
+            <button onClick={handleRecipeData}>Add to My Recipes</button>
         </div>
     )
 }

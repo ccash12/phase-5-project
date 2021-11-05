@@ -11,6 +11,7 @@ function NewRecipeForm({newRecipeInput, getRecipes, setGetRecipes}) {
     
 
     function handleSubmit(e) {
+        console.log("submitting")
         e.preventDefault();
         fetch('http://localhost:3000/recipes', {
             method: 'POST',
@@ -39,7 +40,7 @@ function NewRecipeForm({newRecipeInput, getRecipes, setGetRecipes}) {
     return(
         <div className="NewRecipeForm">
                 <h3>Add New Recipe:</h3>
-            <form onsubmit={handleSubmit}> 
+            <form onSubmit={handleSubmit}> 
                 <input 
                     type="text" 
                     name='name'

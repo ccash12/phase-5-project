@@ -18,13 +18,7 @@ function App() {
   const [isLoading, setIsLoading] = useState(false)
   const [errors, setErrors] = useState([])
   const [getRecipes,setGetRecipes] = useState([])
-  const [newRecipeInput, setNewRecipeInput] = useState({ name:'', cuisine: '', meal:'', description:'', rating: '',image:'' })
-
-//   useEffect(() => {
-//     fetch("/recipes")
-//     .then(r => r.json())
-//     .then(recipes => setGetRecipes(recipes))
-// }, [setGetRecipes]);
+  const [myRecipeData, setMyRecipeData] = useState([])
 
 
   useEffect(() => {
@@ -35,6 +29,23 @@ function App() {
     })
   }, []);
   
+  function handleRecipeData(productData) {
+    const exist = myRecipeData.find(x => x.id === productData.id)
+    if (exist) {
+      setMyRecipeData(myRecipeData.map(x => x.id === productData.id ? {...exist, qty: exist.qty + 1} : x))
+    } else {
+      setMyRecipeData([...myRecipeData, {...productData, qty: 1}])
+    }
+  }
+
+  function handleRemoveRecipeList(productData) {
+    const exist = myRecipeData.find(x => x.id === productData.id)
+    if (exist.qty === 1) {
+      setMyRecipeData(myRecipeData.filter(x => x.id !== myRecipeData.id))
+    } else {
+      setMyRecipeData(myRecipeData.map(x => x.id === productData.id ? {...exist, qty: exist.qty - 1} : x))
+    }
+  }
 
 
   
@@ -55,7 +66,13 @@ function App() {
                 setGetRecipes={setGetRecipes}
                 />
             </Route>
-            <Route path='/myrecipes' component={MyRecipes}/> 
+            <Route path="/recipes/mine">
+              <MyRecipes 
+                myRecipeData={myRecipeData}
+                handleRecipeData={handleRecipeData}
+                handleRemoveRecipeList={handleRemoveRecipeList}
+              />
+            </Route>
             </Switch>
             ) : (
             <Switch>

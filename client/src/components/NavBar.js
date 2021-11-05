@@ -1,8 +1,6 @@
 import React from 'react'
 import { Link } from "react-router-dom"
 
-
-
 function NavBar( {user, setUser} ) {
     
     function handleLogout(){
@@ -22,14 +20,14 @@ function NavBar( {user, setUser} ) {
                 <Link to="/">
                     <h1 className="Title">Recipe Website</h1>
                 </Link>
+                <Link to='/myrecipes'> 
+                    My Recipes
+                </Link>
             </div>
             <div> 
             {user ? (
                     <>
                         <button className="LogOutButton" onClick={handleLogout}>Log Out</button> 
-                        <Link to="/myrecipes" className="MyRecipesLink">
-                            My Recipes
-                        </Link>
                     </>
                 ) : (
                 <>
