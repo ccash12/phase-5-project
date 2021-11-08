@@ -7,6 +7,7 @@ function NewRecipeForm({newRecipeInput, getRecipes, setGetRecipes}) {
     const [rating,setRating] = useState("")
     const [description,setDescription] = useState("")
     const [image, setImage] = useState("")
+    const [userId,setUserId] = useState("")
 
     
 
@@ -22,7 +23,8 @@ function NewRecipeForm({newRecipeInput, getRecipes, setGetRecipes}) {
             meal:meal,
             rating:rating,
             description:description,
-            image:image
+            image:image,
+            user_id:userId
             }), 
         })
         .then(resp => resp.json())
@@ -31,7 +33,7 @@ function NewRecipeForm({newRecipeInput, getRecipes, setGetRecipes}) {
     
 
         function handleAddRecipe(newRecipe) {
-        const updatedRecipeArray = [...getRecipes, newRecipeInput]
+        const updatedRecipeArray = [...getRecipes, newRecipe]
         setGetRecipes(updatedRecipeArray)
     }
     
@@ -82,6 +84,13 @@ function NewRecipeForm({newRecipeInput, getRecipes, setGetRecipes}) {
                     placeholder="image"
                     value={image}
                     onChange={(e) => setImage(e.target.value)}
+                />
+                <input 
+                    type="text" 
+                    name='userId'
+                    placeholder="User ID"
+                    value={userId}
+                    onChange={(e) => setUserId(e.target.value)}
                 />
                 <button type="submit">Submit New Recipe!</button>
             </form>

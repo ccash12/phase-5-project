@@ -12,13 +12,14 @@ function RecipeContainer({getRecipes,setGetRecipes,newRecipeInput,setNewRecipeIn
     useEffect(() => {
         fetch("/recipes")
         .then(r => r.json())
-        .then(recipes => { console.log(recipes)
+        .then(recipes => {
             setGetRecipes(recipes)})
     }, [setGetRecipes]);
     
 
     
     const displayRecipes = getRecipes.filter((recipe) => {
+        console.log(recipe)
         return recipe.name.toLowerCase().includes(searchRecipes.toLowerCase())
     })
     
