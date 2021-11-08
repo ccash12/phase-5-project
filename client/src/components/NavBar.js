@@ -20,14 +20,14 @@ function NavBar( {user, setUser} ) {
                 <Link to="/">
                     <h1 className="Title">Recipe Website</h1>
                 </Link>
-                <Link to='/myrecipes'> 
-                    My Recipes
-                </Link>
             </div>
-            <div> 
+            <div className="navBarLinks"> 
             {user ? (
                     <>
-                        <button className="LogOutButton" onClick={handleLogout}>Log Out</button> 
+                        <button className="LogOutButton" onClick={handleLogout}>Log Out</button>
+                        <Link to='/myrecipes'> 
+                            <h3>My Recipes</h3>
+                        </Link> 
                     </>
                 ) : (
                 <>

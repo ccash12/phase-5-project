@@ -28,24 +28,7 @@ function App() {
       }
     })
   }, []);
-  
-  function handleRecipeData(productData) {
-    const exist = myRecipeData.find(x => x.id === productData.id)
-    if (exist) {
-      setMyRecipeData(myRecipeData.map(x => x.id === productData.id ? {...exist, qty: exist.qty + 1} : x))
-    } else {
-      setMyRecipeData([...myRecipeData, {...productData, qty: 1}])
-    }
-  }
 
-  function handleRemoveRecipeList(productData) {
-    const exist = myRecipeData.find(x => x.id === productData.id)
-    if (exist.qty === 1) {
-      setMyRecipeData(myRecipeData.filter(x => x.id !== myRecipeData.id))
-    } else {
-      setMyRecipeData(myRecipeData.map(x => x.id === productData.id ? {...exist, qty: exist.qty - 1} : x))
-    }
-  }
 
 
   
@@ -68,9 +51,7 @@ function App() {
             </Route>
             <Route path="/recipes/mine">
               <MyRecipes 
-                myRecipeData={myRecipeData}
-                handleRecipeData={handleRecipeData}
-                handleRemoveRecipeList={handleRemoveRecipeList}
+                user={user}
               />
             </Route>
             </Switch>

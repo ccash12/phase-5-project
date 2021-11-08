@@ -45,17 +45,22 @@
   align-items: center;
   flex-wrap: nowrap;
   justify-content: space-between;
+  background-color: #a4330d
 }
 
 .SignUpLink, .LoginLink, .LogOutButton{
   float: right;
   width: 300px;
   padding: 10px;
+  align-items: center;
+  text-align: center;
 }
 
 a{
   color: black;
   text-decoration: none;
+  display: block;
+  text-align: center;
 }
 a:hover{
   text-decoration: underline;
@@ -71,11 +76,14 @@ a:hover{
 
 }
 .recipe-card{
-  padding: 15px;
-  background-color: #ffffff;
-  font-family: Arial, Helvetica, sans-serif;
-  font-size: 12px;
-  border-radius: 10px;
+  box-shadow: 5px 3px 3px rgb(55, 55, 55);
+  width: 240px;
+  padding: 20px;
+  margin: 10px;
+  float:left;
+  object-fit: contain;
+  font-family:monospace;
+  border-radius: 30px;
 }
 
 .recipe-list {
@@ -99,6 +107,9 @@ a:hover{
   display: flex;
   justify-content: center;
   align-items: center;
+  max-width: 200%;
+  height: auto;
+  object-fit: cover;
 }
 
 .SignUpContainer form,
@@ -115,3 +126,22 @@ a:hover{
   height: 30px;
   width: 200px;
 }
+.navBarLinks {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  height: 50%;
+  padding: 30px;
+  font-size: 15px;
+}
+
+.SignUpLink, .LoginLink {
+  margin: 15px;
+}
+
+.LogOutButton {
+  background: none;
+  border: none;
+  font-size: 15px;
+}
+

@@ -19,7 +19,7 @@ function RecipeContainer({getRecipes,setGetRecipes,newRecipeInput,setNewRecipeIn
 
     
     const displayRecipes = getRecipes.filter((recipe) => {
-        return( recipe.name.toLowerCase().includes(searchRecipes.toLowerCase()))
+        return recipe.name.toLowerCase().includes(searchRecipes.toLowerCase())
     })
     
     
