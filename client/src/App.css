@@ -45,7 +45,7 @@
   align-items: center;
   flex-wrap: nowrap;
   justify-content: space-between;
-  background-color: #a4330d
+  background-color: #a4330d;
 }
 
 .SignUpLink, .LoginLink, .LogOutButton{
@@ -76,13 +76,18 @@ a:hover{
 
 }
 .recipe-card{
-  box-shadow: 5px 3px 3px rgb(55, 55, 55);
-  width: 240px;
-  padding: 20px;
-  margin: 10px;
-  float:left;
+  padding: 15px;
+  background-color: #ffffff;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 12px;
+  border-radius: 10px;
+  float: left;
   object-fit: contain;
-  border-radius: 30px;
+}
+
+.cardImg {
+  width: 150px;
+  height: auto;
 }
 
 .recipe-list {
@@ -123,8 +128,9 @@ a:hover{
 .SignUpContainer input,
 .LogInContainer input {
   height: 30px;
-  width: 200px;
+  width: 50%;
 }
+
 .navBarLinks {
   display: flex;
   flex-direction: row;

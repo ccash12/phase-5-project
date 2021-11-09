@@ -3,7 +3,7 @@ import React from 'react'
 function RecipeCard({recipe}) {
     const { name, cuisine, meal, rating, description, image} = recipe
 
-    console.log(image)
+
 
     return(
         <div className="recipe-card"> 
@@ -13,8 +13,7 @@ function RecipeCard({recipe}) {
             <h4>Meal:{meal}</h4>
             <h4>Rating:{rating}</h4>
             <h4>Description:{description}</h4>
-            <button>Add to My Recipes</button>
-            <button> More Details!</button>
+            <button>More Details</button>
         </div>
     )
 }

@@ -4,6 +4,7 @@ import { Switch, Route} from "react-router-dom"
 
 import './App.css';
 
+
 import NavBar from './components/NavBar'
 import Login from './components/Login'
 import Home from './components/Home'
@@ -49,7 +50,7 @@ function App() {
                 setGetRecipes={setGetRecipes}
                 />
             </Route>
-            <Route path="/recipes/mine">
+            <Route path="/recipes/myrecipes">
               <MyRecipes 
                 user={user}
               />
@@ -75,13 +76,13 @@ function App() {
                 setIsLoading={setIsLoading}
               /> 
             </Route>
-            <Route>
+            {/* <Route>
               <Home exact path='/'
                 user = {user}
                 getRecipes = {getRecipes}
                 setGetRecipes={setGetRecipes}
               />
-            </Route>
+            </Route> */}
             </Switch>
             )}
       </main>

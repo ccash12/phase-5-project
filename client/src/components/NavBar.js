@@ -25,7 +25,7 @@ function NavBar( {user, setUser} ) {
             {user ? (
                     <>
                         <button className="LogOutButton" onClick={handleLogout}>Log Out</button>
-                        <Link to='/myrecipes'> 
+                        <Link to='/recipes/myrecipes'> 
                             <h3>My Recipes</h3>
                         </Link> 
                     </>

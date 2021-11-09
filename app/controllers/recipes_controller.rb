@@ -1,5 +1,5 @@
 class RecipesController < ApplicationController
-    skip_before_action :authorize
+    skip_before_action :authorize, only: [:index, :show]
 
     def index
         recipes = Recipe.all
@@ -18,6 +18,11 @@ class RecipesController < ApplicationController
         else
             render json: {error: "validation errors"}, status: :unprocessable_entity
         end
+    end
+
+    def my_recipes
+        user = @current_user
+        render json: user.recipes, status: :ok
     end
 
     private
