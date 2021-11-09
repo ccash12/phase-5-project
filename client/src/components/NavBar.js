@@ -28,6 +28,9 @@ function NavBar( {user, setUser} ) {
                         <Link to='/recipes/myrecipes'> 
                             <h3>My Recipes</h3>
                         </Link> 
+                        <Link to="/myingredients">
+                            <h3>My Ingredients</h3>
+                        </Link>
                     </>
                 ) : (
                 <>

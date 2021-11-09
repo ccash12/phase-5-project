@@ -15,6 +15,12 @@ Rails.application.routes.draw do
 
   resources :recipes, only: [:index, :show, :create, :my_recipes]
 
+  resources :ingredients do
+    collection do 
+      get 'my_ingredients'
+    end
+  end
+
   resources :ingredients, only: [:index]
 
 end

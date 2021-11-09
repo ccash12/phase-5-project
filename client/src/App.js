@@ -9,9 +9,9 @@ import NavBar from './components/NavBar'
 import Login from './components/Login'
 import Home from './components/Home'
 import Signup from './components/Signup'
-import NewRecipeForm from "./components/NewRecipeForm";
-import MyRecipes from "./components/MyRecipes"
-import RecipeDetails from "./components/RecipeDetails"
+import MyIngredients from './components/MyIngredients'
+import MyRecipes from './components/MyRecipes'
+// import RecipeDetails from "./components/RecipeDetails"
 
 
 function App() {
@@ -55,6 +55,10 @@ function App() {
                 user={user}
               />
             </Route>
+            <Route path="/myingredients">
+              <MyIngredients />
+            </Route>
+        
             </Switch>
             ) : (
             <Switch>
