@@ -5,4 +5,9 @@ class IngredientsController < ApplicationController
         ingredients = Ingredient.all
         render json: ingredients
     end
+
+    def my_ingredients
+        user = @current_user
+        render json: user.ingredients, status: :ok
+    end
 end

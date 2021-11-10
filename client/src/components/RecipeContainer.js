@@ -15,11 +15,8 @@ function RecipeContainer({getRecipes,setGetRecipes,newRecipeInput,setNewRecipeIn
         .then(recipes => {
             setGetRecipes(recipes)})
     }, [setGetRecipes]);
-    
-
-    
+        
     const displayRecipes = getRecipes.filter((recipe) => {
-        console.log(recipe)
         return recipe.name.toLowerCase().includes(searchRecipes.toLowerCase())
     })
     

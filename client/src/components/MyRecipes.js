@@ -10,8 +10,7 @@ function MyRecipes() {
         fetch('/recipes/my_recipes')
         .then((response) => response.json())
         .then((data) => setRecipesArray(data))
-    },[]
-)
+    },[])
 
     const myRecipesArray = recipesArray.map(recipeObject=> 
         <RecipeCard 

@@ -20,7 +20,7 @@ function App() {
   const [errors, setErrors] = useState([])
   const [getRecipes,setGetRecipes] = useState([])
   const [myRecipeData, setMyRecipeData] = useState([])
-
+  
 
   useEffect(() => {
     fetch("/me").then((r) => {
@@ -29,8 +29,6 @@ function App() {
       }
     })
   }, []);
-
-
 
   
 
@@ -52,10 +50,9 @@ function App() {
             </Route>
             <Route path="/recipes/myrecipes">
               <MyRecipes 
-                user={user}
               />
             </Route>
-            <Route path="/myingredients">
+            <Route path="/ingredients/myingredients">
               <MyIngredients />
             </Route>
         
