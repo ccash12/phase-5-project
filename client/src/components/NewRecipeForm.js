@@ -1,6 +1,6 @@
 import {useState} from 'react'
 
-function NewRecipeForm({newRecipeInput, getRecipes, setGetRecipes}) {
+function NewRecipeForm({ getRecipes, setGetRecipes}) {
     const [name,setName] = useState("")
     const [cuisine,setCuisine] = useState("")
     const [meal,setMeal] = useState("")
@@ -12,7 +12,6 @@ function NewRecipeForm({newRecipeInput, getRecipes, setGetRecipes}) {
     
 
     function handleSubmit(e) {
-        console.log("submitting")
         e.preventDefault();
         fetch('/recipes', {
             method: 'POST',
@@ -37,7 +36,6 @@ function NewRecipeForm({newRecipeInput, getRecipes, setGetRecipes}) {
         setGetRecipes(updatedRecipeArray)
     }
     
-
 
     return(
         <div className="NewRecipeForm">
@@ -91,7 +89,7 @@ function NewRecipeForm({newRecipeInput, getRecipes, setGetRecipes}) {
                     placeholder="User ID"
                     value={userId}
                     onChange={(e) => setUserId(e.target.value)}
-                />
+                /> 
                 <button type="submit">Submit New Recipe!</button>
             </form>
         </div>

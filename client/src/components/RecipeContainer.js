@@ -4,7 +4,7 @@ import RecipeList from './RecipeList'
 import ImageSlider from './ImageSlider'
 import {useState,useEffect} from "react";
 
-function RecipeContainer({getRecipes,setGetRecipes,newRecipeInput,setNewRecipeInput}) {
+function RecipeContainer({getRecipes,setGetRecipes}) {
     const [searchRecipes,setSearchRecipes] = useState('')
     
     
@@ -32,7 +32,6 @@ function RecipeContainer({getRecipes,setGetRecipes,newRecipeInput,setNewRecipeIn
             <RecipeList 
                 displayRecipes={displayRecipes}
                 getRecipes={getRecipes}
-                newRecipeInput={newRecipeInput}
             /> 
 
         </div>

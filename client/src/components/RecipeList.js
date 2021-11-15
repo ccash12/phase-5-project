@@ -1,5 +1,4 @@
 import React from 'react'
-import {useState} from 'react'
 import RecipeCard from './RecipeCard'
 
 function RecipeList({displayRecipes}) {

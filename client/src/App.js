@@ -12,6 +12,7 @@ import Signup from './components/Signup'
 import MyIngredients from './components/MyIngredients'
 import MyRecipes from './components/MyRecipes'
 // import RecipeDetails from "./components/RecipeDetails"
+import NewRecipeForm from './components/NewRecipeForm'
 
 
 function App() {
@@ -52,8 +53,14 @@ function App() {
               <MyRecipes 
               />
             </Route>
-            <Route path="/ingredients/myingredients">
+            {/* <Route path="/ingredients/myingredients">
               <MyIngredients />
+            </Route> */}
+            <Route path="/addrecipe">
+              <NewRecipeForm 
+                getRecipes={getRecipes}
+                setGetRecipes={setGetRecipes}
+              />
             </Route>
         
             </Switch>

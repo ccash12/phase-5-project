@@ -1,9 +1,11 @@
 import React from 'react'
+import {useState} from 'react'
 
 function RecipeCard({recipe}) {
     const { name, cuisine, meal, rating, description, image} = recipe
+    
 
-
+ 
 
     return(
         <div className="recipe-card"> 
