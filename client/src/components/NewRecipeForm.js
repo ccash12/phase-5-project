@@ -39,7 +39,7 @@ function NewRecipeForm({ getRecipes, setGetRecipes}) {
 
     return(
         <div className="NewRecipeForm">
-                <h3>Add New Recipe:</h3>
+                <h3 className="recipeFormTitle">Add New Recipe:</h3>
             <form onSubmit={handleSubmit}> 
                 <input 
                     type="text" 

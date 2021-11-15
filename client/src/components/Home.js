@@ -7,18 +7,18 @@ import NewRecipeForm from "./NewRecipeForm"
 function Home({user,getRecipes,setGetRecipes}) {
     if (user) {
         return (
-            <>
+            <div>
                 <RecipeContainer 
                     getRecipes={getRecipes}
                     setGetRecipes={setGetRecipes}
                     
                 />
-
+        
                 {/* <NewRecipeForm
                     getRecipes={getRecipes}
                     setGetRecipes={setGetRecipes}
                 /> */}
-            </>
+            </div>
         )
     } else {
         return (

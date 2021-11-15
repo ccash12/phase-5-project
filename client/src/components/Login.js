@@ -31,7 +31,7 @@ function Login( {errors, setErrors, setUser, setIsLoading} ) {
     
     return(
         <div className="LogInContainer"> 
-            <form onSubmit={handleSubmit}> 
+            <form className="loginForm" onSubmit={handleSubmit}> 
                 <label>Email:</label>
                 <input 
                     type="text"

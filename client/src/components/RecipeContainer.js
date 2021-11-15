@@ -22,7 +22,7 @@ function RecipeContainer({getRecipes,setGetRecipes}) {
     
     
     return(
-        <div> 
+        <div className="recipeContainer"> 
             <ImageSlider />
             <Search 
                 searchRecipes={searchRecipes}

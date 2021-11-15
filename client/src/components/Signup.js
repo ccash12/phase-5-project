@@ -41,7 +41,7 @@ function Signup( {setUser,setErrors,isLoading,setIsLoading,errors} ){
     
     return(
         <div className="SignUpContainer">
-            <form className="FormSignin"onSubmit={handleSubmit}>
+            <form className="SignUpForm"onSubmit={handleSubmit}>
                 <label htmlFor="first_name">First Name:</label>
                 <input 
                     type="text" 

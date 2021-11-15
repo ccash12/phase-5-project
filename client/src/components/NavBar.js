@@ -18,7 +18,8 @@ function NavBar( {user, setUser} ) {
         <header>
             <div className="NavBarContainer"> 
                 <Link to="/">
-                    <h1 className="Title">Recipe Website</h1>
+                    {/* <img className="NavBarLogo" src="https://www.pngitem.com/pimgs/m/411-4119303_recipe-card-transparent-recipe-clipart-hd-png-download.png" alt="logo"/> */}
+                    <h1 className="Title">A Couple of Cooks</h1>
                 </Link>
             </div>
             <div className="navBarLinks"> 
