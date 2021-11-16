@@ -19,7 +19,7 @@ function MyRecipes() {
     )
 
     return(
-        <div>
+        <div className="myRecipesArray">
             {myRecipesArray}
         </div>
     )

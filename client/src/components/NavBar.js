@@ -19,7 +19,6 @@ function NavBar( {user, setUser} ) {
             <div className="NavBarContainer"> 
                 <div className="NavBarTitle">
                 <Link to="/">
-                    {/* <img className="NavBarLogo" src="https://www.pngitem.com/pimgs/m/411-4119303_recipe-card-transparent-recipe-clipart-hd-png-download.png" alt="logo"/> */}
                     <h1 className="Title">A Couple of Cooks</h1>
                 </Link>
                 </div>
@@ -38,14 +37,14 @@ function NavBar( {user, setUser} ) {
                             </Link> */}
                         </>
                     ) : (
-                    <>
+                    <div className="NavBarInside">
                         <Link to='/signup' className="SignUpLink">
                             Sign Up
                         </Link>
                         <Link to="/login" className="LoginLink"> 
                             Log In
                         </Link>
-                    </>
+                    </div>
                     )}
                 </div>
             </div>
