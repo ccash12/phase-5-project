@@ -38,60 +38,62 @@ function NewRecipeForm({ getRecipes, setGetRecipes}) {
     
 
     return(
-        <div className="NewRecipeForm">
-                <h3 className="recipeFormTitle">Add New Recipe:</h3>
-            <form onSubmit={handleSubmit}> 
-                <input 
-                    type="text" 
-                    name='name'
-                    placeholder="name"
-                    value={name}
-                    onChange={(e) => setName(e.target.value)}
-                />
-                <input 
-                    type="text" 
-                    name='cuisine'
-                    placeholder="cuisine"
-                    value={cuisine}
-                    onChange={(e) => setCuisine(e.target.value)}
-                />
-                <input 
-                    type="text" 
-                    name='meal'
-                    placeholder="meal"
-                    value={meal}
-                    onChange={(e) => setMeal(e.target.value)}
-                />
-                <input 
-                    type="text" 
-                    name='rating'
-                    placeholder="rating"
-                    value={rating}
-                    onChange={(e) => setRating(e.target.value)}
-                />
-                <input 
-                    type="text" 
-                    name='description'
-                    placeholder="description"
-                    value={description}
-                    onChange={(e) => setDescription(e.target.value)}
-                />
-                <input 
-                    type="text" 
-                    name='image'
-                    placeholder="image"
-                    value={image}
-                    onChange={(e) => setImage(e.target.value)}
-                />
-                <input 
-                    type="text" 
-                    name='userId'
-                    placeholder="User ID"
-                    value={userId}
-                    onChange={(e) => setUserId(e.target.value)}
-                /> 
-                <button type="submit">Submit New Recipe!</button>
-            </form>
+        <div className="NewRecipeContainer">
+                <h3 className="NewRecipeFormTitle">Add New Recipe:</h3>
+            <div className="NewRecipeForm">
+                <form onSubmit={handleSubmit}> 
+                    <input 
+                        type="text" 
+                        name='name'
+                        placeholder="name"
+                        value={name}
+                        onChange={(e) => setName(e.target.value)}
+                    />
+                    <input 
+                        type="text" 
+                        name='cuisine'
+                        placeholder="cuisine"
+                        value={cuisine}
+                        onChange={(e) => setCuisine(e.target.value)}
+                    />
+                    <input 
+                        type="text" 
+                        name='meal'
+                        placeholder="meal"
+                        value={meal}
+                        onChange={(e) => setMeal(e.target.value)}
+                    />
+                    <input 
+                        type="text" 
+                        name='rating'
+                        placeholder="rating"
+                        value={rating}
+                        onChange={(e) => setRating(e.target.value)}
+                    />
+                    <input 
+                        type="text" 
+                        name='description'
+                        placeholder="description"
+                        value={description}
+                        onChange={(e) => setDescription(e.target.value)}
+                    />
+                    <input 
+                        type="text" 
+                        name='image'
+                        placeholder="image"
+                        value={image}
+                        onChange={(e) => setImage(e.target.value)}
+                    />
+                    <input 
+                        type="text" 
+                        name='userId'
+                        placeholder="User ID"
+                        value={userId}
+                        onChange={(e) => setUserId(e.target.value)}
+                    /> 
+                    <button type="submit">Submit New Recipe!</button>
+                </form>
+            </div>
         </div>
     )
 }

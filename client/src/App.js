@@ -54,7 +54,7 @@ function App() {
               />
             </Route>
 
-            <Route path="addrecipe">
+            <Route path="/addrecipe">
               <NewRecipeForm 
                 getRecipes={getRecipes}
                 setGetRecipes={setGetRecipes}
