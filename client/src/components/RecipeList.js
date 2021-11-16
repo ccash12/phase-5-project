@@ -3,8 +3,6 @@ import RecipeCard from './RecipeCard'
 
 function RecipeList({displayRecipes}) {
     
-
-
     const displayRecipeArray = displayRecipes.map(recipe =>
         <RecipeCard    
             key={recipe.id}
@@ -13,7 +11,7 @@ function RecipeList({displayRecipes}) {
         )
 
     return(
-        <div clasName="recipe-list"> 
+        <div className="recipeList"> 
             {displayRecipeArray}
         </div>
     )

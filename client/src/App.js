@@ -53,10 +53,8 @@ function App() {
               <MyRecipes 
               />
             </Route>
-            {/* <Route path="/ingredients/myingredients">
-              <MyIngredients />
-            </Route> */}
-            <Route path="/addrecipe">
+
+            <Route path="addrecipe">
               <NewRecipeForm 
                 getRecipes={getRecipes}
                 setGetRecipes={setGetRecipes}
@@ -84,16 +82,10 @@ function App() {
                 setIsLoading={setIsLoading}
               /> 
             </Route>
-            {/* <Route>
-              <Home exact path='/'
-                user = {user}
-                getRecipes = {getRecipes}
-                setGetRecipes={setGetRecipes}
-              />
-            </Route> */}
+            
             </Switch>
-            )}
-      </main>
+              )}
+      </main>  
     </div>
   );
 }

@@ -20,7 +20,7 @@ const ImageSlider = () => {
             <FaArrowAltCircleRight className="right-arrow" onClick={nextSlide} />
             {ImageData.map((slide, index) => {
                 return (
-                    <div className={index === image ? 'slide active' : 'slide'} key={index}>
+                    <div className={index === image ? 'slide-active' : 'slide'} key={index}>
                         {index === image && (<img src={slide.image} alt='Product' className="imgProduct" />)}
                     </div>
                 )

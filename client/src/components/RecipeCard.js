@@ -14,7 +14,10 @@ function RecipeCard({recipe}) {
             <h4>Cuisine:{cuisine}</h4>
             <h4>Meal:{meal}</h4>
             <h4>Rating:{rating}</h4>
-            <h4>Description:{description}</h4>
+            <div>
+                <h4>Description</h4>
+                <p>{description}</p>
+            </div>
         </div>
     )
 }
