@@ -195,16 +195,32 @@ a:hover{
 .NewRecipeForm {
   background: linear-gradient(90deg, grey, white);		
 	position: relative;	
-	height: 250px;
-	width: 360px;	
 	box-shadow: 0px 0px 24px white;
-  justify-content:center
+  justify-content:center;
+  display: flex;
+  align-items: center;
+  height: 100%;
+  width: 50%;
+  overflow: hidden;
 }
 
-.NewRecipeForm label {
+.NewRecipeForm input {
+  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+  border: none;
+	border-bottom: 2px solid #D1D1D4;
+	background: none;
+	font-weight: 700;
+	transition: .2s;
+  flex-direction: column;
+}
+
+.NewRecipeForm button {
   font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif
 }
 
+.NewRecipeFormTitle {
+  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif
+}
 
 
 .LogInContainer {
@@ -255,6 +271,7 @@ a:hover{
 	background: none;
 	font-weight: 700;
 	transition: .2s;
+  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
 }
 
 .loginInput:active,
