@@ -18,6 +18,7 @@ function RecipeCard({recipe}) {
                 <h4>Description</h4>
                 <p>{description}</p>
             </div>
+            <button>Full Recipe</button>
         </div>
     )
 }
